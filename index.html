@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>General Knowledge Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f0f2f5;
+      padding: 15px;
+      margin: 0;
+    }
+    h2 { text-align: center; color: #333; font-size: 24px; }
+    .question { margin-bottom: 15px; }
+    .option { margin-left: 15px; display: block; }
+    button {
+      padding: 10px 15px;
+      margin-top: 10px;
+      cursor: pointer;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button:hover { background: #45a049; }
+    #resultSection, #card, #downloadBtn { display: none; margin-top: 20px; }
+
+    /* Professional Card Design */
+    #card {
+      width: 100%;
+      max-width: 450px;
+      min-height: 300px;
+      margin: 20px auto;
+      background: linear-gradient(135deg, #e0f7fa, #80deea);
+      border-radius: 15px;
+      border: 2px solid #00838f;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      font-family: 'Arial', sans-serif;
+      box-sizing: border-box;
+    }
+    #card img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 2px solid #00838f;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+    #card h1 {
+      margin-top: 10px;
+      font-size: 28px;
+      color: #006064;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+    #cardMessage {
+      font-size: 20px;
+      font-weight: bold;
+      color: #004d40;
+      margin: 10px 0 20px 0;
+    }
+    #card h3, #card p {
+      margin: 5px 0;
+      font-size: 16px;
+      color: #004d40;
+    }
+
+    /* Input Styling */
+    input[type=text], input[type=number], input[type=file] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    /* Responsive */
+    @media (max-width: 500px) {
+      body { padding: 10px; }
+      h2 { font-size: 20px; }
+      #card { padding: 15px; }
+      #card h1 { font-size: 24px; }
+      #cardMessage { font-size: 18px; }
+      #card h3, #card p { font-size: 14px; }
+      button { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<h2>General Knowledge Quiz</h2>
+<div id="quiz">
+  <!-- Questions 1-10 -->
+  <div class="question">
+    <p>1. What is the capital of France?</p>
+    <label class="option"><input type="radio" name="q1" value="Paris"> Paris</label>
+    <label class="option"><input type="radio" name="q1" value="London"> London</label>
+    <label class="option"><input type="radio" name="q1" value="Rome"> Rome</label>
+  </div>
+  <div class="question">
+    <p>2. Who wrote 'Hamlet'?</p>
+    <label class="option"><input type="radio" name="q2" value="Shakespeare"> Shakespeare</label>
+    <label class="option"><input type="radio" name="q2" value="Hemingway"> Hemingway</label>
+    <label class="option"><input type="radio" name="q2" value="Dickens"> Dickens</label>
+  </div>
+  <div class="question">
+    <p>3. The Sun rises in the?</p>
+    <label class="option"><input type="radio" name="q3" value="East"> East</label>
+    <label class="option"><input type="radio" name="q3" value="West"> West</label>
+    <label class="option"><input type="radio" name="q3" value="North"> North</label>
+  </div>
+  <div class="question">
+    <p>4. What is 5 + 7?</p>
+    <label class="option"><input type="radio" name="q4" value="12"> 12</label>
+    <label class="option"><input type="radio" name="q4" value="10"> 10</label>
+    <label class="option"><input type="radio" name="q4" value="14"> 14</label>
+  </div>
+  <div class="question">
+    <p>5. Who discovered gravity?</p>
+    <label class="option"><input type="radio" name="q5" value="Newton"> Newton</label>
+    <label class="option"><input type="radio" name="q5" value="Einstein"> Einstein</label>
+    <label class="option"><input type="radio" name="q5" value="Galileo"> Galileo</label>
+  </div>
+  <div class="question">
+    <p>6. Which planet is known as the Red Planet?</p>
+    <label class="option"><input type="radio" name="q6" value="Mars"> Mars</label>
+    <label class="option"><input type="radio" name="q6" value="Venus"> Venus</label>
+    <label class="option"><input type="radio" name="q6" value="Jupiter"> Jupiter</label>
+  </div>
+  <div class="question">
+    <p>7. What is the largest ocean?</p>
+    <label class="option"><input type="radio" name="q7" value="Pacific"> Pacific</label>
+    <label class="option"><input type="radio" name="q7" value="Atlantic"> Atlantic</label>
+    <label class="option"><input type="radio" name="q7" value="Indian"> Indian</label>
+  </div>
+  <div class="question">
+    <p>8. How many continents are there?</p>
+    <label class="option"><input type="radio" name="q8" value="7"> 7</label>
+    <label class="option"><input type="radio" name="q8" value="6"> 6</label>
+    <label class="option"><input type="radio" name="q8" value="5"> 5</label>
+  </div>
+  <div class="question">
+    <p>9. What is the chemical symbol for water?</p>
+    <label class="option"><input type="radio" name="q9" value="H2O"> H2O</label>
+    <label class="option"><input type="radio" name="q9" value="O2"> O2</label>
+    <label class="option"><input type="radio" name="q9" value="CO2"> CO2</label>
+  </div>
+  <div class="question">
+    <p>10. Which is the fastest land animal?</p>
+    <label class="option"><input type="radio" name="q10" value="Cheetah"> Cheetah</label>
+    <label class="option"><input type="radio" name="q10" value="Lion"> Lion</label>
+    <label class="option"><input type="radio" name="q10" value="Tiger"> Tiger</label>
+  </div>
+
+  <button onclick="showResultForm()">Show Result</button>
+</div>
+
+<div id="resultSection">
+  <h3>Enter Your Details for Result Card</h3>
+  <input type="text" id="playerName" placeholder="Your Name">
+  <input type="number" id="playerAge" placeholder="Your Age">
+  <input type="file" id="playerPhoto" accept="image/*">
+  <button onclick="generateResultCard()">Generate Result Card</button>
+</div>
+
+<div id="card">
+  <h1>Congratulations!</h1>
+  <p id="cardMessage"></p>
+  <h3 id="cardName"></h3>
+  <p id="cardAge"></p>
+  <p id="cardScore"></p>
+  <img id="cardPhoto" src="">
+</div>
+<button id="downloadBtn" onclick="downloadCard()">Download Result Card</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+  const answers = {
+    q1: 'Paris', q2: 'Shakespeare', q3: 'East', q4: '12', q5: 'Newton',
+    q6: 'Mars', q7: 'Pacific', q8: '7', q9: 'H2O', q10: 'Cheetah'
+  };
+
+  function showResultForm() {
+    document.getElementById('quiz').style.display = 'none';
+    document.getElementById('resultSection').style.display = 'block';
+  }
+
+  function generateResultCard() {
+    const name = document.getElementById('playerName').value.trim();
+    const age = document.getElementById('playerAge').value.trim();
+    const photoInput = document.getElementById('playerPhoto');
+
+    if (!name || !age || !photoInput.files[0]) {
+      alert("Please fill all details and upload a photo!");
+      return;
+    }
+
+    let score = 0;
+    for (let q in answers) {
+      const selected = document.querySelector(`input[name="${q}"]:checked`);
+      if (selected && selected.value === answers[q]) score++;
+    }
+
+    let message = "";
+    if (score === 10) message = "Outstanding!";
+    else if (score >= 8) message = "Very Good!";
+    else if (score >= 6) message = "Good!";
+    else message = "Better Luck Next Time!";
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById('cardPhoto').src = e.target.result;
+      document.getElementById('cardName').innerText = "Name: " + name;
+      document.getElementById('cardAge').innerText = "Age: " + age;
+      document.getElementById('cardScore').innerText = `Score: ${score}/10`;
+      document.getElementById('cardMessage').innerText = message;
+
+      document.getElementById('card').style.display = 'block';
+      document.getElementById('downloadBtn').style.display = 'block';
+      document.getElementById('resultSection').style.display = 'none';
+    };
+    reader.readAsDataURL(photoInput.files[0]);
+  }
+
+  function downloadCard() {
+    const card = document.getElementById('card');
+    const studentName = document.getElementById('playerName').value.trim().replace(/\s+/g, "_");
+    html2canvas(card).then(canvas => {
+      const link = document.createElement('a');
+      link.download = studentName + '_Result.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    });
+  }
+</script>
+
+</body>
+</html>
